@@ -43,7 +43,7 @@ npm run dev
 
 ![image](https://user-images.githubusercontent.com/53328265/117644400-1088fd00-b1a7-11eb-91b7-f85e2ed6288c.png)
 
-### you can use  these commands for running backend and frontend separately
+### you can use  these commands for running backend and frontend separately (all of these commands are mentioned in package.json)
 ### npm run server 
 (for backend)
 ### npm run client
