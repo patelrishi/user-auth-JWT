@@ -24,10 +24,9 @@ first open the teriminal in root directory which will be look like this
 ```
 npm install
 
-```
+
 ![image](https://user-images.githubusercontent.com/53328265/117643771-64dfad00-b1a6-11eb-99f6-cbd896fdefd9.png)
 
-```
 ### then run this command (i will install the Frontend dependency) 
 ```
 cd frontend
