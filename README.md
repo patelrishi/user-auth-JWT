@@ -41,3 +41,7 @@ npm run dev
 ```
 
 ![image](https://user-images.githubusercontent.com/53328265/117644400-1088fd00-b1a7-11eb-91b7-f85e2ed6288c.png)
+
+
+
+### Reminder Dont forget to add your MONGO_URI , PORT and  JWT_SECRET in your .env  file it is very important
