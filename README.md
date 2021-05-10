@@ -20,13 +20,13 @@ first open the teriminal in root directory which will be look like this
 
 ![image](https://user-images.githubusercontent.com/53328265/117643628-39f55900-b1a6-11eb-8e76-647666d9f579.png)
 
-### then run this command (i will install the backend dependency) 
+### then run this command (it will install the backend dependency) 
 
 npm install
 
 ![image](https://user-images.githubusercontent.com/53328265/117643771-64dfad00-b1a6-11eb-99f6-cbd896fdefd9.png)
 
-### then run this command (i will install the Frontend dependency) 
+### then run this command (it will install the Frontend dependency) 
 ```
 cd frontend
 npm install
