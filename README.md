@@ -1,5 +1,5 @@
 ### user-auth-JWT
-JWT(Json Web Token)- for Authorization
+
 ### Env Variables
 
 Create a .env file in then root and add the following
