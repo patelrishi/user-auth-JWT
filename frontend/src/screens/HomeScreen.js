@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
   heroContent: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
+
+    background: "#f5f5f5",
+    minHeight: "90vh",
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -34,16 +37,24 @@ const HomeScreen = () => {
   const logoutHandler = () => {
     dispatch(logout());
   };
-  useEffect(() => {}, []);
+  localStorage.getItem("userInfo");
+  const [data, setdata] = useState(
+    JSON.parse(localStorage.getItem("userInfo"))
+  );
+
+  useEffect(() => {
+    if (userInfo) {
+      setdata(userInfo);
+    }
+  }, [userInfo]);
   return (
     <React.Fragment>
       <CssBaseline />
       <AppBar position="relative"></AppBar>
       <main>
-        {/* Hero unit */}
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            {userInfo ? (
+            {data ? (
               <Typography
                 component="h6"
                 variant="h6"
@@ -51,7 +62,8 @@ const HomeScreen = () => {
                 color="textPrimary"
                 gutterBottom
               >
-                Welcome {userInfo.fname} to Authentication app
+                Welcome {data.fname} to Authentication app
+                <UploadScreen />
               </Typography>
             ) : (
               <Typography
@@ -64,31 +76,11 @@ const HomeScreen = () => {
                 Welcome to Authentication app
               </Typography>
             )}
-            {userInfo ? (
-              <Typography
-                variant="h5"
-                align="center"
-                color="textSecondary"
-                paragraph
-              >
-                Thanks for using wanna try with another account?
-                <UploadScreen />
-              </Typography>
-            ) : (
-              <Typography
-                variant="h5"
-                align="center"
-                color="textSecondary"
-                paragraph
-              >
-                if you are Authenticated then your name will show up here...!
-              </Typography>
-            )}
 
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  {userInfo ? (
+                  {data ? (
                     <Button
                       variant="contained"
                       color="primary"

@@ -15,10 +15,14 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "auto",
-    width: 250,
-    border: "1px solid black",
-    borderRadius: 12,
+    width: "46%",
     margin: 10,
+    borderRadius: 15,
+    boxShadow: "0px 9.53425px 76.274px rgb(26 0 80 / 9%)",
+    backgroundColor: "#ffffff",
+  },
+  title: {
+    margin: "20px 0 !important",
   },
 }));
 
@@ -42,29 +46,15 @@ const RenderData = ({ elem }) => {
   };
 
   return (
-    <div>
-      <div className={classes.root} sx={{ maxWidth: 345 }}>
-        <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            {elem.title}
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <ExpandMore
-            expand={expanded}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            ...
-          </ExpandMore>
-        </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography paragraph>{elem.body}</Typography>
-          </CardContent>
-        </Collapse>
-      </div>
+    <div className={classes.root} sx={{ maxWidth: 345 }}>
+      <CardContent>
+        <Typography variant="body2" className={classes.title}>
+          {elem.title}
+        </Typography>
+        <Typography color="text.secondary" paragraph>
+          {elem.body}
+        </Typography>
+      </CardContent>
     </div>
   );
 };
